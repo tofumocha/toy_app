@@ -158,4 +158,26 @@ $ git commit -m "Initialize repository"
 git remote add origin https://github.com/tofumocha/toy_app.git
 % git branch -M main
 git push --set-upstream origin master
-git push -u origin main
+% git push -u origin main
+
+# modify application_controller.rb and routes.rb
+
+git commit -am "Add hello"
+
+
+# install heroku
+source <(curl -sL https://cdn.learnenough.com/heroku_install)
+
+
+# modify Gemfile
+
+group :production do
+  gem 'pg', '1.2.3'
+end
+
+
+
+# deploy
+heroku create
+git push && git push heroku
+
